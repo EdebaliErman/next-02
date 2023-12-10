@@ -6,7 +6,17 @@ import styles from './styles.module.css'
 import StatBar from '@/components/statCard'
 async function HomeContainer() {
 
-  const [product, user, quotesData, todosData] = await Promise.all([fecthData("product"), fecthData("user"), fecthData("quotes"), fecthData("todos")])
+  const [product,
+    user,
+    quotesData,
+    todosData,
+    postsData] = await Promise.all([
+      fecthData("product"),
+      fecthData("user"),
+      fecthData("quotes"),
+      fecthData("todos"),
+      fecthData("posts"),
+    ])
 
   return (
     <div className={styles.home}>
@@ -17,7 +27,7 @@ async function HomeContainer() {
       </div>
       <UsersCard data={user} />
       <div >
-        <header>
+        <article>
           <div className='text-stone-100 text-xl bg-gradient-to-br w-96 to-gray-500 from-orange-500 m-8 rounded-3xl p-3 shadow-white shadow-2xl'>
             <h1 className='font-serif italic'>{quotesData.quotes[0].quote}</h1>
             <h1 className='italic font-mono uppercase text-orange-500 font-extrabold text-right my-3 '>{quotesData.quotes[0].author}</h1>
@@ -30,10 +40,12 @@ async function HomeContainer() {
             <label className='italic font-serif font-extrabold text-3xl text-orange-200'>Todo</label>
             <h1 className='font-serif italic text-white'>{todosData.todos[1].todo}</h1>
           </div>
-        </header>
-        <footer>
-
-        </footer>
+          <div className='text-blue-900 text-xl bg-gradient-to-br w-96 to-gray-300 from-orange-200 m-8 rounded-3xl p-3 shadow-white shadow-2xl'>
+            <h1 className='font-serif italic'>{postsData.posts[0].title}</h1>
+            <h1 className='italic font-mono uppercase text-stone-900 font-extrabold text-right my-3 '>{postsData.posts[0].body}</h1>
+          </div>
+        </article>
+      
       </div>
     </div>
   )
