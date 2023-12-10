@@ -41,10 +41,10 @@ function ProductDetail({ product }) {
           count={product.stock} />
         <RadiusStat
           title={"rating"}
-          count={product.rating} />
+          count={Math.floor(product.rating)*10} />
         <RadiusStat
           title={"discountPercentage"}
-          count={product.discountPercentage} />
+          count={Math.floor(product.discountPercentage)} />
       </div>
     </div>
   )

@@ -1,0 +1,24 @@
+@tailwind components;
+
+
+@layer components {
+    .products {
+        @apply p-12
+    }
+
+    .products table {
+        @apply border-collapse border border-orange-500 text-gray-600 rounded-3xl
+    }
+
+    .products table th {
+        @apply border-2 border-orange-400 p-4 font-mono font-bold bg-gradient-to-t to-transparent from-orange-400 text-white
+    }
+
+    .products table tr {
+        @apply border-2 border-orange-400 p-4 font-mono font-bold bg-gradient-to-r to-orange-400 from-orange-50
+    }
+
+    .products table td {
+        @apply p-3
+    }
+}

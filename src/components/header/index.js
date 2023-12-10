@@ -16,10 +16,10 @@ function Header() {
                     <IconLink path={"/"} icon={<IoHome />} />
                 </li>
                 <li>
-                    <IconLink path={"/"} icon={<LiaSitemapSolid  />} />
+                    <IconLink path={"/user"} icon={<PiUserSquareThin  />} />
                 </li>
                 <li>
-                    <IconLink path={"/"} icon={<PiUserSquareThin  />} />
+                    <IconLink path={"/product"} icon={<LiaSitemapSolid  />} />
                 </li>
             </ul>
         </header>
