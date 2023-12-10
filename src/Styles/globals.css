@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base{
+    html,body{
+        @apply w-full h-full bg-[#333333] p-8 flex justify-between items-start 
+    }
+   
+}

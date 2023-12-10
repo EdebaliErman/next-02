@@ -1,0 +1,21 @@
+@tailwind components;
+
+@layer components {
+    .productCard {
+        @apply flex flex-col p-4 w-1/2 gap-4 justify-start items-start border-2 rounded-3xl bg-gradient-to-bl from-[#3534347e]  to-[#f8f7f728]
+       h-max 
+    }
+    .productCard h1{
+        @apply text-orange-400 font-extrabold font-sans text-3xl
+    }
+    .productCard h1 span{
+        @apply text-orange-100 font-bold  font-mono
+    }
+    .productInfo {
+        @apply flex w-full items-start justify-between text-left text-orange-100 gap-4 bg-gradient-to-r from-[#ecb14228] via-transparent to-[#ffffff28] border-orange-100 shadow-md shadow-orange-100   p-3
+        
+    }
+    .productInfo img{
+        @apply rounded-xl w-12 
+    }
+}

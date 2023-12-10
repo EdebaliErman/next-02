@@ -1,0 +1,19 @@
+@tailwind components;
+
+@layer components {
+    .radius {
+        @apply  flex relative justify-center items-center  h-max p-4 rounded-3xl 
+    }
+
+    .radius svg circle{
+        stroke-width:18 ;
+        stroke: #4e4d4d;
+        stroke-dasharray: 300;
+        fill:none;
+        transform: translate(5px,15px);
+        position: absolute;
+    }
+   
+
+
+}

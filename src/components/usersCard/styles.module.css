@@ -1,0 +1,27 @@
+@tailwind components; 
+
+@layer components{
+    .usersCard{
+        @apply border-2  shadow-md shadow-white rounded-3xl p-8  bg-gradient-to-bl from-[#3534347e]  to-[#f8f7f728]
+        w-max   
+    }
+    .usersCard h1 {
+        @apply text-xl font-bold font-sans text-white flex justify-start items-center
+    }
+    .usersCard h1 span {
+        @apply text-orange-300 font-mono font-normal
+    }
+    .userBar{
+        @apply flex justify-between items-center gap-3 border-2 bg-gradient-to-r from-[#ecb14228] via-transparent to-[#ffffff28] border-orange-100 shadow-md shadow-orange-100 m-2 text-orange-300 py-2 px-2 rounded-2xl
+        font-mono  w-56 h-24
+    }
+    .userBar h2{
+        @apply text-lg font-bold capitalize italic
+    }
+    .userBar img{
+        @apply w-12 rounded-full border-2 shadow-orange-300 shadow-sm border-orange-300 bg-gray-300
+    }
+    .userBar svg{
+        @apply w-12 h-32
+    }
+} 

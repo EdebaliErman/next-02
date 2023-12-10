@@ -1,0 +1,22 @@
+@tailwind components;
+
+
+@layer components {
+    .header {
+        @apply w-28 bg-transparent  h-full flex justify-center items-center flex-col  
+        border-2 border-gray-400 rounded-3xl shadow-white shadow-md backdrop-blur-lg
+    }
+    .header>div{
+        @apply mt-12 border-r-2 border-orange-100 rounded-full p-3  shadow-sm shadow-white
+        bg-gradient-to-r from-transparent to-gray-500 
+        ease-in-out delay-300
+        hover:shadow-lg hover:shadow-orange-300 hover:border-orange-400 hover:to-gray-950
+    }
+    .header ul {
+        @apply flex flex-col justify-start gap-3 h-full blur-none mt-12
+    }
+
+    .header svg {
+        @apply w-12 h-12 fill-orange-300
+    }
+}
