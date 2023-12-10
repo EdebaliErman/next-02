@@ -2,7 +2,7 @@
 
 @layer components {
     .product {
-        @apply text-2xl text-white border-2 border-white p-12 rounded-3xl shadow-md shadow-white w-max
+        @apply text-2xl text-white border-2 border-white p-12 rounded-3xl shadow-md shadow-white w-max 
     }
 
     .product header {

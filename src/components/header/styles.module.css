@@ -3,8 +3,8 @@
 
 @layer components {
     .header {
-        @apply w-28 bg-transparent  h-full flex justify-center items-center flex-col  
-        border-2 border-gray-400 rounded-3xl shadow-white shadow-md backdrop-blur-lg
+        @apply w-28 bg-transparent  h-max flex justify-center items-center flex-col  py-6
+        border-2 border-gray-400 rounded-3xl shadow-white shadow-md backdrop-blur-lg fixed
     }
     .header>div{
         @apply mt-12 border-r-2 border-orange-100 rounded-full p-3  shadow-sm shadow-white

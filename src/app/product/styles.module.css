@@ -3,7 +3,7 @@
 
 @layer components {
     .products {
-        @apply p-12
+        @apply p-12 ml-36
     }
 
     .products table {

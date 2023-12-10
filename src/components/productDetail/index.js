@@ -8,7 +8,7 @@ function ProductDetail({ product }) {
   console.log(product)
   const [count, setCount] = useState(0)
   return (
-    <div key={product.id} className='flex gap-4' >
+    <div key={product.id} className='flex gap-4 ' >
       <div className={styles.product}>
         <header>
           <div>

@@ -2,6 +2,6 @@
 
 @layer components {
     .home {
-        @apply flex justify-center items-start w-full h-full 
+        @apply flex justify-center items-start w-full h-full ml-36
     }
 }
