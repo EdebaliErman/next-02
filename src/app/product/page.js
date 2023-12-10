@@ -2,20 +2,24 @@
 import { fecthData } from '@/services'
 import React from 'react'
 import styles from './styles.module.css'
-async function Product() {
+import Link from 'next/link'
+async function Products() {
   const data = await fecthData("products")
   return (
     <div className={styles.products}>
       <table>
         <thead>
-          <th>Id</th>
-          <th>images</th>
-          <th>title</th>
-          <th>description</th>
-          <th>price</th>
-          <th>stock</th>
-          <th>brand</th>
-          <th>category</th>
+          <tr>
+            <th>Id</th>
+            <th>images</th>
+            <th>title</th>
+            <th>description</th>
+            <th>price</th>
+            <th>stock</th>
+            <th>brand</th>
+            <th>category</th>
+            <th>Detail</th>
+          </tr>
         </thead>
         <tbody>
           {
@@ -28,6 +32,7 @@ async function Product() {
               <td>{item.stock}</td>
               <td>{item.brand}</td>
               <td>{item.category}</td>
+              <td><Link href={`product/${item.id}`}>Detail</Link> </td>
             </tr>
             )
           }
@@ -37,4 +42,4 @@ async function Product() {
   )
 }
 
-export default Product
+export default Products

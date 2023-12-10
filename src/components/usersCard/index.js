@@ -9,7 +9,7 @@ function UsersCard({ data }) {
             <div className='w-full flex justify-between '>
                 <h1>Users <span>({data.users.length})</span>
                 </h1>
-                <Link href={"users"}>
+                <Link href={"user"}>
                     <TbUserSearch className='w-8 h-8 text-orange-400 m-1' />
                 </Link>
             </div>
