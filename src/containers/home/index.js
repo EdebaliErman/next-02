@@ -10,12 +10,14 @@ async function HomeContainer() {
     user,
     quotesData,
     todosData,
-    postsData] = await Promise.all([
+    postsData,
+    categoriesData] = await Promise.all([
       fecthData("product"),
       fecthData("user"),
       fecthData("quotes"),
       fecthData("todos"),
       fecthData("posts"),
+      fecthData("products/categories"),
     ])
 
   return (
@@ -24,6 +26,10 @@ async function HomeContainer() {
         <ProductsCard data={product} />
         <StatBar product={product.products.length}
           users={user.users.length} />
+          <h1 className='text-center w-full text-4xl text-white  capitalize drop-shadow-sm shadow-white'>categories</h1>
+        <article className='flex w-[700px] flex-wrap p-4 justify-center items-center  '>
+          {categoriesData.map(item => <span className='bg-gray-300 p-4 rounded-full shadow-lg text-2xl  shadow-white text-stone-600 m-4'>{item}</span>)}
+        </article>
       </div>
       <UsersCard data={user} />
       <div >
@@ -45,7 +51,7 @@ async function HomeContainer() {
             <h1 className='italic font-mono uppercase text-stone-900 font-extrabold text-right my-3 '>{postsData.posts[0].body}</h1>
           </div>
         </article>
-      
+
       </div>
     </div>
   )
