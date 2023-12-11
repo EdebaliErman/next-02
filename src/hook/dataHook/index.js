@@ -15,19 +15,25 @@ export const useData = () => {
     React.useEffect(() => {
         const getItem = async () => {
             try {
-                const [productData,
+                //! Fecthing...
+                const [
+                    productData,
                     userData,
                     quotesData,
                     todosData,
                     postsData,
-                    categoriesData] = await Promise.all([
+                    categoriesData
+                ] = await Promise.all(
+                    [
                         fecthData("product"),
                         fecthData("user"),
                         fecthData("quotes"),
                         fecthData("todos"),
                         fecthData("posts"),
                         fecthData("products/categories"),
-                    ])
+                    ]
+                )
+                //! Add 'is stating....
                 setData({
                     product: productData.products,
                     user: userData.users,
@@ -36,7 +42,6 @@ export const useData = () => {
                     posts: postsData.posts,
                     categories: categoriesData
                 })
-                console.log(data.posts)
             } catch (error) {
                 console.log(error)
             }
