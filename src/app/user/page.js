@@ -20,12 +20,8 @@ function Users() {
 
   const handleDeleted = async (id,key) => {
     try {
-      await deleteData(`users/${id}`)
-      const index = data.splice(key-1, id)
-      console.log(index[0].id)
-      const indexSelect = index[0].id
-      const newdata = data.filter(item => item.id !== indexSelect)
-      setData(newdata)
+      const newdata = data.filter(item => item.id !== id)
+      setData([...newdata])
     } catch (error) {
       console.error('Error simulating user deletion:', error);
     }
