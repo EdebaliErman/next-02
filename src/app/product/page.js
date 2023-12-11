@@ -1,10 +1,12 @@
 'use client'
-import { fecthData } from '@/services'
 import React from 'react'
 import styles from './styles.module.css'
 import Link from 'next/link'
-async function Products() {
-  const data = await fecthData("products")
+import { useData } from '@/hook/dataHook'
+function Products() {
+
+  const { data,handleDeleted } = useData()
+  console.log(data.product)
   return (
     <div className={styles.products}>
       <table>
@@ -19,11 +21,12 @@ async function Products() {
             <th>brand</th>
             <th>category</th>
             <th>Detail</th>
+            <th>Deleted</th>
           </tr>
         </thead>
         <tbody>
           {
-            data && data.products.map(item => <tr key={item.id}>
+            data.product.map(item => <tr key={item.id}>
               <td>{item.id}</td>
               <td><img className='w-12 h-12 rounded-full bg-gray-500' src={item.thumbnail} alt='profile' /> </td>
               <td>{item.title}</td>
@@ -33,6 +36,7 @@ async function Products() {
               <td>{item.brand}</td>
               <td>{item.category}</td>
               <td><Link href={`product/${item.id}`}>Detail</Link> </td>
+              <td><button onClick={() => handleDeleted(item.id, data.product)}>Delted</button></td>
             </tr>
             )
           }

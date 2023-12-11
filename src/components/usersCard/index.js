@@ -7,13 +7,13 @@ function UsersCard({ data }) {
     return (
         <div className={styles.usersCard}>
             <div className='w-full flex justify-between '>
-                <h1>Users <span>({data.users.length})</span>
+                <h1>Users <span>({data.length})</span>
                 </h1>
                 <Link href={"user"}>
                     <TbUserSearch className='w-8 h-8 text-orange-400 m-1' />
                 </Link>
             </div>
-            {data.users.map(item => <div className={styles.userBar}>
+            {data.map(item => <div key={item.id} className={styles.userBar}>
                 <img src={item.image} />
                 <div>
                     <h2>{item.username}</h2>

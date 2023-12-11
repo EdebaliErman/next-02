@@ -1,31 +1,11 @@
 'use client'
-import { deleteData, fecthData } from '@/services'
 import React from 'react'
 import styles from './styles.module.css'
 import Link from 'next/link'
+import { useData } from '@/hook/dataHook'
 
 function Users() {
-  const [data, setData] = React.useState([])
-  React.useEffect(() => {
-    const getItem = async () => {
-      try {
-        const req = await fecthData("users")
-        setData(req.users || [])
-      } catch (error) {
-        console.log(error)
-      }
-    }
-    getItem()
-  }, [])
-
-  const handleDeleted = async (id,key) => {
-    try {
-      const newdata = data.filter(item => item.id !== id)
-      setData([...newdata])
-    } catch (error) {
-      console.error('Error simulating user deletion:', error);
-    }
-  }
+  const { data ,handleDeleted} = useData()
 
   return (
     <div className={styles.User}>
@@ -50,7 +30,7 @@ function Users() {
         </thead>
         <tbody>
           {
-            data.map((item, key) => <tr key={key}>
+            data.user.map((item, key) => <tr key={key}>
               <td>{item.id}</td>
               <td><img className='w-12 h-12 rounded-full bg-gray-500' src={item.image} alt='profile' /> </td>
               <td>{item.firstName}</td>
@@ -64,7 +44,7 @@ function Users() {
               <td>{item.password}</td>
               <td>{item.university}</td>
               <td> <Link href={"user/" + item.id}>Detail</Link></td>
-              <td><button onClick={() => handleDeleted(item.id,key)}>Delted</button></td>
+              <td><button onClick={() => handleDeleted(item.id,data.user)}>Delted</button></td>
             </tr>
             )
           }

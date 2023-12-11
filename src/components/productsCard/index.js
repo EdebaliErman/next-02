@@ -7,12 +7,12 @@ function ProductsCard({ data }) {
   return (
     <div className={styles.productCard}>
       <div className='flex justify-between items-center w-full'>
-        <h1>products <span>({data.products.length})</span> </h1>
+        <h1>products <span>({data.length})</span> </h1>
         <Link href={"product"}>
           <HiTemplate className='h-12 w-12 text-orange-400' />
         </Link>
       </div>
-      {data.products.map(item => <div className={styles.productInfo} >
+      {data.map(item => <div key={item.id} className={styles.productInfo} >
         <img src={item.thumbnail} />
         <div>
           <h2>{item.title}</h2>
