@@ -28,7 +28,7 @@ async function HomeContainer() {
           users={user.users.length} />
           <h1 className='text-center w-full text-4xl text-white  capitalize drop-shadow-sm shadow-white'>categories</h1>
         <article className='flex w-[700px] flex-wrap p-4 justify-center items-center  '>
-          {categoriesData.map(item => <span className='bg-gray-300 p-4 rounded-full shadow-lg text-2xl  shadow-white text-stone-600 m-4'>{item}</span>)}
+          {categoriesData.map(item => <span className='bg-gray-300 p-4 rounded-full shadow-lg text-2xl  shadow-white text-stone-600 m-4'>{item}</span>).slice(1,7)}
         </article>
       </div>
       <UsersCard data={user} />

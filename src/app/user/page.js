@@ -18,10 +18,14 @@ function Users() {
     getItem()
   }, [])
 
-  const handleDeleted = async (id) => {
+  const handleDeleted = async (id,key) => {
     try {
-       await deleteData(`users/${id}`)
-        console.log("succesfull")
+      await deleteData(`users/${id}`)
+      const index = data.splice(key-1, id)
+      console.log(index[0].id)
+      const indexSelect = index[0].id
+      const newdata = data.filter(item => item.id !== indexSelect)
+      setData(newdata)
     } catch (error) {
       console.error('Error simulating user deletion:', error);
     }
@@ -64,7 +68,7 @@ function Users() {
               <td>{item.password}</td>
               <td>{item.university}</td>
               <td> <Link href={"user/" + item.id}>Detail</Link></td>
-              <td><button onClick={() => handleDeleted(item.id)}>Delted</button></td>
+              <td><button onClick={() => handleDeleted(item.id,key)}>Delted</button></td>
             </tr>
             )
           }
