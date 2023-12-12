@@ -8,7 +8,7 @@ import { useData } from '@/hook/dataHook'
 function HomeContainer() {
   const { data } = useData()
 
-// todo Yarın article kısmını hallet
+  // todo Yarın article kısmını hallet
 
   return (
     <div className={styles.home}>
@@ -23,8 +23,8 @@ function HomeContainer() {
       </div>
       <UsersCard data={data.user} />
       <div >
-        
-        {/* <article>
+        {/* ------------------------------------------- */}
+        {/* TODO: <article>
           <div className='text-stone-100 text-xl bg-gradient-to-br w-96 to-gray-500 from-orange-500 m-8 rounded-3xl p-3 shadow-white shadow-2xl'>
             <h1 className='font-serif italic'>{data.quotes[0]}</h1>
             <h1 className='italic font-mono uppercase text-orange-500 font-extrabold text-right my-3 '>{data.quotes[0]}</h1>
@@ -46,7 +46,7 @@ function HomeContainer() {
             </div>
           }
         </article> */}
-
+        {/* ---------------------------------------- */}
       </div>
     </div>
   )
