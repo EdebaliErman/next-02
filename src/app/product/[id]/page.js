@@ -1,4 +1,4 @@
-import ProductDetail from '@/components/productDetail'
+import ProductDetail from '@/components/productComponents/productDetail'
 import { fecthData } from '@/services'
 import React from 'react'
 

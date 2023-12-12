@@ -1,4 +1,4 @@
-import ProductForm from '@/components/productAddForm'
+import ProductForm from '@/components/productComponents/productAddForm'
 import React from 'react'
 
 function ProductAdd() {

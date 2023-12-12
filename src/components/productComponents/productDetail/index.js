@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { HiArrowLeft, HiArrowRight } from 'react-icons/hi';
 import { MdOutlinePriceCheck } from "react-icons/md";
 import styles from './styles.module.css'
-import RadiusStat from '../radiusStat';
+import RadiusStat from '../../radiusStat';
 function ProductDetail({ product }) {
   console.log(product)
   const [count, setCount] = useState(0)

@@ -1,6 +1,6 @@
 'use client'
-import ProductsCard from '@/components/productsCard'
-import UsersCard from '@/components/usersCard'
+import ProductsCard from '@/components/productComponents/productsCard'
+import UsersCard from '@/components/userComponents/usersCard'
 import React from 'react'
 import styles from './styles.module.css'
 import StatBar from '@/components/statCard'
