@@ -14,7 +14,7 @@ function ProductForm() {
             body: JSON.stringify(add)
         })
             .then(res => res.json())
-
+        document.body.innerHTML = JSON.stringify(add)
     }
     const handleChange = (e) => {
         const { name, value } = e.target
